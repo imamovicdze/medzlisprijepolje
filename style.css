@@ -1,0 +1,148 @@
+body {
+   
+}
+
+.blacknavbar {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    height: 31px;
+    background-color: #3d3d3d;
+    font-size:10px;
+    font-weight: 300;
+}
+
+.blacknavbar div ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.blacknavbar div ul li {
+    float: left;
+    position: relative;
+}
+
+.blacknavbar div ul li a {
+    text-decoration: none;
+    display: block;
+    padding:7px;
+    margin-right: 10px;
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+}
+
+.blacknavbar div ul li a:link,
+.blacknavbar div ul li a:visited {
+    color: #fff;
+}
+
+.blacknavbar div ul li a:hover {
+    color: #42b505;
+}
+
+.first_heading {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+    margin: 15px 0px 20px 0;
+    text-align: center;
+}
+
+.first_heading a {
+    text-decoration: none;
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+    color: #42b505;
+}
+
+.first_heading a:hover {
+    color: black;
+}
+
+.after_heading {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.whitenavbar {
+    box-shadow:0px 17px 11px -20px rgba(0,0,0,0.75);
+    margin: 0 auto;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    height: 42px;
+    position: relative;
+}
+
+.whitenavbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.whitenavbar ul li {
+    float: left;
+    position: relative;
+}
+
+.whitenavbar ul li ul {
+    background-color: #fff;
+    position: absolute;
+    display: none;
+    width: 250px;
+    border: 1px solid rgb(233, 227, 227);
+}
+
+.whitenavbar ul li:hover > ul {
+    display: block;
+}
+
+.whitenavbar ul li ul li {
+    float: none;
+}
+
+.whitenavbar ul li a{
+    color: black;
+    display: block;
+    padding: 0 15px;
+    letter-spacing: 0.4px;
+    line-height: 48px;
+    font-weight: normal;
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+}
+
+.whitenavbar div ul li a:link,
+.whitenavbar div ul li a:visited {
+    color: rgb(27, 26, 26);
+    text-decoration: none;
+}
+
+.whitenavbar div ul li a:hover{
+    color: #42b505;
+}
+
+.footer {
+    height: 129px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #3d3d3d;
+    color: white;
+    text-align: center;
+}
+
+.first {
+    padding: 10px;
+}
+
+.ro {
+    border: 0.5px solid #42b505;
+}
+
+.p1 {
+    display: block;
+    position: relative;
+    top: 15px;
+}
