@@ -1,0 +1,37 @@
+@media only screen and (max-width: 850px) {
+	.whitenavbar {
+		display: none;
+	}
+	.hamburger {
+		display: block;
+	}
+	.hamburger ul li ul {
+		list-style-type: disc;
+	}
+	.dark-blue-text {
+		color: #42b505;
+
+	}
+	.first-layout-link {
+		display: none;
+	}
+	.third-layout-link {
+		display: none;
+	}
+	.inside {
+		position: absolute;
+		bottom: 40%;
+		height: 100px;
+	}
+	.social {
+		display: none;
+	}
+
+}
+
+@media only screen and  (max-width: 980px){
+	.third-layout-link {
+		display: none;
+	}
+}
+
