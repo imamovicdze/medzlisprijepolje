@@ -12,7 +12,7 @@ class MainController
 	}
 
 	public function index(){
-        $names = $this->MainService->getNames();
+        $names = $this->mainService->getNames();
         $htmlString = "<ul>";
         foreach($names as $name){
             $htmlString = $htmlString. ("<li>".$name."</li>");

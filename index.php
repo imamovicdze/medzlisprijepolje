@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response; 
 use MedzlisPrijepolje\Controllers\MainController;
 
-$app = new Application();
+$app = new Application($_SERVER['HOME']);
 
 $mainController = new MainController($app['mainService']);
 $app->get('/', [$mainController, "index"]); 
