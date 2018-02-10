@@ -1,0 +1,11 @@
+{
+    "require": {
+        "cicada/cicada": "@stable"
+    }
+    "autoload": {
+      "psr-4": {
+        "MedzlisPrijepolje\\": "src/",
+        "MedzlisPrijepoljeTest\\": "tests/"
+      }
+    }
+}
