@@ -14,6 +14,6 @@ class Application extends \Cicada\Application
 	private function setUpServices(){
 		$this['mainService'] = function(){
 			return new mainService();
-		}
+		};
 	}
 }

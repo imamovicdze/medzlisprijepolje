@@ -14,7 +14,7 @@ $app = new Application();
 
 $mainController = new MainController($app['mainService']);
 $app->get('/', [$mainController, "index"]); 
-$app->get('/dashboard', [$mainController, "dashboard"];
+$app->get('/dashboard', [$mainController, "dashboard"]);
 $app->get('/hello/{name}', function (Application $app, Request $request, $name) {
     return new Response("Hello $name");
 });

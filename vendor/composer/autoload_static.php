@@ -6,6 +6,10 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitd07e55260d1bea8cb21dee969fa450f8
 {
+    public static $files = array (
+        '6e60481d8c04e99474e2ba7b3658ab5a' => __DIR__ . '/..' . '/php-activerecord/php-activerecord/ActiveRecord.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
@@ -15,6 +19,11 @@ class ComposerStaticInitd07e55260d1bea8cb21dee969fa450f8
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+        ),
+        'M' => 
+        array (
+            'MedzlisPrijepolje\\' => 18,
+            'MedzlisPrijepoljeTest\\' => 22,
         ),
         'C' => 
         array (
@@ -34,6 +43,14 @@ class ComposerStaticInitd07e55260d1bea8cb21dee969fa450f8
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'MedzlisPrijepolje\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
+        'MedzlisPrijepoljeTest\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
         ),
         'Cicada\\' => 
         array (
