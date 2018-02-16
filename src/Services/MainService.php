@@ -15,6 +15,6 @@ class MainService
     }
 
     public function getNames(){
-        return [ "Haris", "John", "Dave", "Mary", "Sara"];
+        return [ "Dzenan", "Haris", "Rasim", "Suljo", "Muamer"];
     }
 }

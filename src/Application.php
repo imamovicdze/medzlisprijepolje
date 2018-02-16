@@ -3,10 +3,10 @@
 namespace MedzlisPrijepolje;
 
 use MedzlisPrijepolje\Services\MainService;
+use MedzlisPrijepolje\Services\DashboardService;
 
 class Application extends \Cicada\Application
 {
-    public $basePath;
 	public function __construct($configPath){
 		parent::__construct();
         $this->configure($configPath);
@@ -14,7 +14,6 @@ class Application extends \Cicada\Application
         $this->configureDatabase();
 		$this->setUpServices();
 
-        $this->basePath = $this['config']->getPathToUpload();
 	}
     protected function configure($configPath) {
         $this['config'] = function () use ($configPath) {
@@ -23,10 +22,18 @@ class Application extends \Cicada\Application
     }
 
 	protected function setUpServices(){
-		$this['mainService'] = function(){
+		$this['mainService'] = function (){
 			return new mainService();
 		};
+
+		$this['dashboardService'] = function (){
+		    return new dashboardService();
+        };
 	}
+
+	protected function setUpControllers(){
+
+    }
 
     protected function configureDatabase()
     {
