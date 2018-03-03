@@ -4,6 +4,7 @@ namespace MedzlisPrijepolje;
 
 use MedzlisPrijepolje\Services\MainService;
 use MedzlisPrijepolje\Services\DashboardService;
+use Twig_SimpleFunction;
 
 class Application extends \Cicada\Application
 {
@@ -13,6 +14,7 @@ class Application extends \Cicada\Application
 
         $this->configureDatabase();
 		$this->setUpServices();
+		$this->setupTwig();
 
 	}
     protected function configure($configPath) {
@@ -30,11 +32,11 @@ class Application extends \Cicada\Application
 		    return new dashboardService();
         };
 	}
-
+/*
 	protected function setUpControllers(){
 
     }
-
+*/
     protected function configureDatabase()
     {
         $dbConfig = $this['config']->getDbConfig();
@@ -47,5 +49,22 @@ class Application extends \Cicada\Application
             ]);
             $cfg->set_default_connection('main');
         });
+    }
+    private function setupTwig() {
+        $this['twig'] = function() {
+            $loader = new \Twig_Loader_Filesystem('front-end');
+            $twig = new  \Twig_Environment($loader, array(//
+//                'cache' => 'cache',
+            ));
+
+            $pathFunction = function ($name, $params = []) {
+                /** @var Route $route */
+                $route = $this['router']->getRoute($name);
+                return $route->getRealPath($params);
+            };
+            $twig->addFunction(new Twig_SimpleFunction('path', $pathFunction));
+
+            return $twig;
+        };
     }
 }
