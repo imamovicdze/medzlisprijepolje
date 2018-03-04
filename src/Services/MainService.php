@@ -6,7 +6,9 @@
  * Time: 5:37 PM
  */
 
+use Symfony\Component\Config\Definition\Exception\Exception;
 namespace MedzlisPrijepolje\Services;
+use MedzlisPrijepolje\Models\Category;
 
 class MainService
 {
@@ -14,7 +16,23 @@ class MainService
 
     }
 
-    public function getNames(){
-        return [ "Dzenan", "Haris", "Rasim", "Suljo", "Muamer"];
+    public function getCategory(){
+        try{
+            $categories = Category::find('all');
+            $categoriesinArray = $this->toCategoryArray($categories);
+            return $categoriesinArray;
+        } catch (Exception $e){
+            return false;
+        }
+    }
+
+    //protected functions
+
+    protected function toCategoryArray($categories){
+        $array = array();
+        foreach ($categories as $category){
+            $array[] = $category->to_array();
+        }
+        return $array;
     }
 }

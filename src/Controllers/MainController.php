@@ -16,27 +16,29 @@ class MainController
 	}
 
 	public function index(){
-        return $this->twig->render("index.html");
+        $category = $this->mainService->getCategory();
+        //return new JsonResponse($category,201);
+        return $this->twig->render("index.twig", ['categories' => $category]);
     }
 
     public function medzlis() {
-        return $this->twig->render("medzlis.html");
+        return $this->twig->render("medzlis.twig");
     }
 
     public function nasidzemati() {
-        return $this->twig->render("nasidzemati.html");
+        return $this->twig->render("nasidzemati.twig");
     }
 
     public function mekteb() {
-        return $this->twig->render("mekteb.html");
+        return $this->twig->render("mekteb.twig");
     }
 
     public function projekti() {
-        return $this->twig->render("projekti.html");
+        return $this->twig->render("projekti.twig");
     }
 
 	public function contact() {
-	    return $this->twig->render("contact.html");
+	    return $this->twig->render("contact.twig");
     }
 
 }
