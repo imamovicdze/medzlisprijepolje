@@ -55,8 +55,9 @@ class Application extends \Cicada\Application
             $loader = new \Twig_Loader_Filesystem('front-end');
             $twig = new  \Twig_Environment($loader, array(//
 //                'cache' => 'cache',
+                'debug' => true
             ));
-
+            $twig->addExtension(new \Twig_Extension_Debug());
             $pathFunction = function ($name, $params = []) {
                 /** @var Route $route */
                 $route = $this['router']->getRoute($name);

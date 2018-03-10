@@ -16,8 +16,8 @@ $app = new Application($_SERVER['HOME']);
 $mainController = new MainController($app['mainService'],$app['twig']);
 $dashboardController = new DashboardController($app['dashboardService'],$app['twig']);
 
-$app->get('/', [$mainController, "index"]);
-$app->get('/index', [$mainController, "index"]);
+$app->get('/', [$dashboardController, "index"]);
+$app->get('/index', [$dashboardController, "index"]);
 $app->get('/medzlis', [$mainController, "medzlis"]);
 $app->get('/nasidzemati', [$mainController, "nasidzemati"]);
 $app->get('/mekteb', [$mainController, "mekteb"]);
@@ -31,6 +31,7 @@ $app->post('/category/create',[$dashboardController, "createCat"]);
 $app->get('/categories',[$dashboardController, "readCat"]);
 $app->post('/category/update/{id}',[$dashboardController, "updateCat"]);
 $app->post('/category/delete/{id}', [$dashboardController, "deleteCat"]);
+$app->get('/category/{id}',[$dashboardController, "getOneCat"]);
 
 
 //News CRUD
@@ -38,6 +39,16 @@ $app->post('/news/create', [$dashboardController, "createN"]);
 $app->get('/news',[$dashboardController, "readN"]);
 $app->post('/news/update/{id}',[$dashboardController, "updateN"]);
 $app->post('/news/delete/{id}', [$dashboardController, "deleteN"]);
+$app->get('/news/{id}',[$dashboardController, "getOneN"]);
+
+
+
+$app->get('/single-new/{id}',[$dashboardController, "single"]);
+
+
+
+//admin pages
+$app->get('/admin/news/create',[$dashboardController,"adminCreateNews"]);
 
 
 

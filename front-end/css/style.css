@@ -351,6 +351,10 @@ body {
     -webkit-margin-end: 0px;
 
     }*/
+.single-related-text {
+    margin-top:15px;
+    margin-bottom: 15px;
+}
 
 .post-text {
     margin-top:15px;

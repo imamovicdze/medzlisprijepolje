@@ -16,9 +16,11 @@ class MainController
 	}
 
 	public function index(){
-        $category = $this->mainService->getCategory();
-        //return new JsonResponse($category,201);
-        return $this->twig->render("index.twig", ['categories' => $category]);
+        /*$category = $this->mainService->getCategory();
+        $news = $this->mainService->getNews();
+        $lastFive = $this->mainService->getNewsLastFive();
+        return new JsonResponse($category,201);
+        return $this->twig->render("index.twig", ['categories' => $category,'news' => $news,'lastFive' =>$lastFive]);*/
     }
 
     public function medzlis() {
@@ -42,13 +44,3 @@ class MainController
     }
 
 }
-
-/*
-    1. All pages can be navigated and have separet method in main controller
-    2. Create DashBoardController for admin
-        a) create Category Entity with migration and seeder.
-            -id,category_name
-        b) create News Entity with migration and seeder.
-            -id,title,content,(in next version add image or video content),
-    3. Create CRUD operation for News and Category.
-*/

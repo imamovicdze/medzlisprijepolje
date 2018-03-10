@@ -26,7 +26,7 @@ class DashboardService {
             $category = Category::create([
                 "category_name" => $entityModel->category_name
             ]);
-            return $category->to_array();
+            return (int)$category->id;
         } catch (Exception $e){
             return false;
         }
@@ -64,15 +64,25 @@ class DashboardService {
         }
     }
 
+    public function getCategoryById($id){
+        try{
+            $category = Category::find($id);
+            return $category->serialize();
+        } catch (Exception $e){
+            return $e;
+        }
+    }
+
 
     //crud news
     public function createNews(NewsEntityModel $entityModel){
         try{
             $news = News::create([
                 "title" => $entityModel->title,
-                "content" => $entityModel->content
+                "content" => $entityModel->content,
+                "category_id" => $entityModel->category_id
             ]);
-            return $news->to_array();
+            return (int)$news->id;
         } catch (Exception $e){
             return false;
         }
@@ -108,6 +118,35 @@ class DashboardService {
             return $news;
         } catch (Exception $e){
             return false;
+        }
+    }
+
+    public function getNewsById($id){
+        try{
+            $news = News::find($id);
+            return $news->serialize();
+        } catch (Exception $e){
+            return $e;
+        }
+    }
+
+    public function getNewsLastFive(){
+        try{
+            $news = News::find('all',array('limit' => 5,'order' => 'id desc'));
+            $newsInArray = $this->toNewsArray($news);
+            return $newsInArray;
+        } catch (Exception $e){
+            return $e;
+        }
+    }
+
+    public function getNewsLastThree(){
+        try{
+            $news = News::find('all',array('limit' => 3,'order' => 'id desc'));
+            $newsInArray = $this->toNewsArray($news);
+            return $newsInArray;
+        } catch (Exception $e){
+            return $e;
         }
     }
 

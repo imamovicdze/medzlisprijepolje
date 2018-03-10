@@ -1,289 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>
-    Medžlis Prijepolje : Islamska zajednica u Srbiji &#8211; Medžlis Prijepolje
-  </title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-  <link rel="icon" href="pictures/logo.png">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Oswald:300,400,600&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
-  rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css" class="href">
-  <link rel="stylesheet" href="css/media-query.css" class="href">
-  <link rel="stylesheet" href="css/media-query.css" class="href">
-</head>
+{% include 'parts/head.twig' %}
 
 <body>
-
-
   <div class="container-fluid">
     <!-- blacknavbar -->
-    <div class="row">
-      <nav class="navigation col-md-12 blacknavbar">
-        <div class="offset-md-3">
-          <ul>
-            <li>
-              <a href="index.html">MEDŽLIS PRIJEPOLJE</a>
-            </li>
-            <li>
-              <a href="#">STATUT</a>
-            </li>
-            <li>
-              <a href="#">OGLAŠAVANJE</a>
-            </li>
-            <li>
-              <a href="contact.html">KONTAKT</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+
+      {% include 'parts/blacknavbar.twig' %}
+
     <!-- end blacknavbar -->
 
     <!-- hamburger menu -->
-    <div class="container">
-      <div class="row">
-        <nav class="navbar navbar-light purple lighten-4 mb-4 hamburger">
 
-          <!-- Navbar brand -->
-          <a class="navbar-brand" href="#"></a>
+      {% include 'parts/hamburger-menu.twig' %}
 
-          <!-- Collapse button -->
-          <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1"
-          aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i class="fa fa-bars fa-1x"></i></span></button>
-
-          <!-- Collapsible content -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-
-            <!-- Links -->
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Pocetna <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="medzlis.html">Medzlis</a>
-                <ul>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">MUSLIMANSKI OMLADINSKI KLUB</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">"LJILJAN" - HOR MEDZLISA PRIJEPOLJE</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="nasidzemati.html">Dzemati</a>
-                <ul>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">DUŠMANIĆI</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">SUHODO</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">ZALUG</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">ŠARAMPOV</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">VAKUF</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">CENTAR - VELIKA DŽAMIJA</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">KARAULA</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">KOMARAN - BUKOVIK</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">BRODAREVO</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">SELJAŠNICA</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">VELIKA ŽUPA</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">RATAJSKA</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">HISARDŽIK</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">LUKE</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="mekteb.html">Mekteb</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="projekti.html">Projekti</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Kontaktirajte Nas</a>
-              </li>
-            </ul>
-            <!-- Links -->
-
-          </div>
-          <!-- Collapsible content -->
-
-        </nav>
-      </div>
-    </div>
     <!-- end hamburger menu -->
 
     <!-- slider -->
-    <div class="container">
-      <div class="row">
-        <div class="offset-md-3 col-md-6">
-          <h1 class="first_heading">
-            <a href="#">MEDŽLIS PRIJEPOLJE : ISLAMSKA ZAJEDNICA U SRBIJI</a>
-          </h1>
-          <p class="after_heading">
-            MEDŽLIS PRIJEPOLJE
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div id="demo" class="carousel slide" data-ride="carousel">
 
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-              <li data-target="#demo" data-slide-to="0" class="active"></li>
-              <li data-target="#demo" data-slide-to="1"></li>
-              <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
+      {% include 'parts/slider.twig' %}
 
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="pictures/first.jpg" alt="Los Angeles" width="1100" height="500">
-              </div>
-              <div class="carousel-item">
-                <img src="pictures/second.jpg" alt="Chicago" width="1100" height="500">
-              </div>
-              <div class="carousel-item">
-                <img src="pictures/third.jpg" alt="New York" width="1100" height="500">
-              </div>
-            </div>
-
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- end slider -->
 
-    <nav class="navigation container whitenavbar">
-      <div class="row">
-        <ul class="col-md-10">
-          <li>
-            <a href="index.html">POČETNA</a>
-          </li>
-          <li>
-            <a href="medzlis.html">MEDŽLIS
-              <i class="fa fa-angle-down"></i>
-            </a>
-            <ul>
-              <li>
-                <a href="#">MUSLIMANSKI OMLADINSKI KLUB MOK</a>
-              </li>
-              <li>
-                <a href="#">"LJILJAN" - HOR MEDŽLISA PRIJEPOLJE</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">NAŠI DŽEMATI
-              <i class="fa fa-angle-down"></i>
-            </a>
-            <ul>
-              <li>
-                <a href="#">DUŠMANIĆI</a>
-              </li>
-              <li>
-                <a href="#">SUHODO</a>
-              </li>
-              <li>
-                <a href="#">ZALUG</a>
-              </li>
-              <li>
-                <a href="#">ŠARAMPOV</a>
-              </li>
-              <li>
-                <a href="#">VAKUF</a>
-              </li>
-              <li>
-                <a href="#">CENTAR - VELIKA DŽAMIJA</a>
-              </li>
-              <li>
-                <a href="#">KARAULA</a>
-              </li>
-              <li>
-                <a href="#">KOMARAN - BUKOVIK</a>
-              </li>
-              <li>
-                <a href="#">BRODAREVO</a>
-              </li>
-              <li>
-                <a href="#">SELJAŠNICA</a>
-              </li>
-              <li>
-                <a href="#">VELIKA ŽUPA</a>
-              </li>
-              <li>
-                <a href="#">RATAJSKA</a>
-              </li>
-              <li>
-                <a href="#">HISARDŽIK</a>
-              </li>
-              <li>
-                <a href="#">LUKE</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="mekteb.html">MEKTEB</a>
-          </li>
-          <li>
-            <a href="projekti.html">PROJEKTI</a>
-          </li>
-          <li>
-            <a href="contact.html">KONTAKTIRAJTE NAS</a>
-          </li>
-        </ul>
-        <div class="col-2 social">
-          <div>
-            <ul>
-              <li class="facebook"><a href="#"><i class="fa fa-facebook "></i></a></li>
-              <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li class="youtube"><a href="#"><i class="fa fa-youtube"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-    </nav>
+    <!-- whitenavbar -->
+
+      {% include 'parts/whitenavbar.twig' %}
+
     <!-- end whitenavbar -->
 
     <!-- article -->
@@ -292,11 +35,11 @@
         <div class="col-md-9">
           <div class="article">
             <div class="Headimage">
-              <img src="pictures/second.jpg" class="img-fluid" height="486" width="900">
+              <img src="front-end/pictures/second.jpg" class="img-fluid" height="486" width="900">
             </div>
             <div class="comment">
               <div class="head">
-                <h2 class="head2"><a href="#">VEZA IZMEĐU IBADETA I LIJEPOG PONAŠANJA: KLANJAŠ NAMAZ A RUŽNO SE PONAŠAŠ</a></h2>
+                <h2 class="head2"><a href="#">{{ news.title }}</a></h2>
                 <div class="after-heading">
                   <span><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 26. JAUNARA 2018</a></span>
                   <span><a href="#"><i class="fa fa-user" aria-hidden="true"></i> UREDNIK</a></span>
@@ -304,7 +47,7 @@
                 </div>
               </div>
               <div class="post-text">
-                <p>Vulputate eu scelerisque felis imperdiet proin fermentum leo. Neque sodales ut etiam sit amet nisl purus. Est lorem ipsum dolor sit amet. Id semper risus in hendreamet nisl purus. Est lorem ipsum dolor sit amet. Id sempeoin fermentum leo. Neque sodales ut etiam sit amet nisl purus. Est lorem ipsum dolor sit amet. Id semper risus in hendreamet nisl purus. Est lorem ipsum dolor sit amet. Id semper risus in hendrerit gravida rutrum quisque. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Erat pellentesque adipiscing commodo elit at imperdiet. Orci ac auctor augue mauris augue neque gravida in sadsadadasdasdasasamet nisl purus. Est lorem ipsum dolor sit amet. Id semper risus in hendrerit gravida rutrum quisque. Dictumst vestibulum rr risus in hendrerit gravida rutrum quisque. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Erat pellentesque adipiscing commodo elit at imperdiet. Orci ac auctor augue mauris augue neque gravida in sadsadadasdasdasasamet nisl purus. Est lorem ipsum dolor sit amet. Id semper risus in hendrerit gravida rutrum quisque. Dictumst vestibulum rhoncus est pellentesqdasdsdadsadaasdasdasddasdassadddass...</p>
+                <p>{{ news.content }}</p>
               </div>
             </div>
           </div>
@@ -313,7 +56,7 @@
     </div>
     <!-- end article -->
 
-
+    <!-- related posts -->
     <div class="container">
       <div class="row col-md-9 related">
         <div>
@@ -323,63 +66,27 @@
         </div>
       </div>
       <div class="row col-md-9">
+          {% for three in lastThree %}
         <div class="col-md-4">
           <div class="article">
             <div class="Headimage">
-              <img src="pictures/second.jpg" class="img-fluid" height="486" width="900">
+              <img src="front-end/pictures/second.jpg" class="img-fluid" height="486" width="900">
             </div>
             <div class="comment">
               <div class="head">
-                <h2 class="single-new-head3"><a href="#">VEZA IZMEĐU IBADETA I LIJEPOG PONAŠANJA: KLANJAŠ NAMAZ A RUŽNO SE PONAŠAŠ</a></h2>
+                <h2 class="single-new-head3"><a href="#">{{ three.title }}</a></h2>
                 <div class="after-heading">
                   <span><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 26. JAUNARA 2018</a></span>
                   <span><a href="#"><i class="fa fa-user" aria-hidden="true"></i> UREDNIK</a></span>
                 </div>
               </div>
-              <div class="post-text">
-                <p>Vulputate eu scelerisque felis imperdiet proin fermentum leo. Neque sodales ut etiam sit amet nisl purus. Est lorem ipsum dolor sit amet.   </p>
+              <div class="single-related-text">
+                <p>{{ three.content }}</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="article">
-            <div class="Headimage">
-              <img src="pictures/second.jpg" class="img-fluid" height="486" width="900">
-            </div>
-            <div class="comment">
-              <div class="head">
-                <h2 class="single-new-head3"><a href="#">VEZA IZMEĐU IBADETA I LIJEPOG PONAŠANJA: KLANJAŠ NAMAZ A RUŽNO SE PONAŠAŠ</a></h2>
-                <div class="after-heading">
-                  <span><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 26. JAUNARA 2018</a></span>
-                  <span><a href="#"><i class="fa fa-user" aria-hidden="true"></i> UREDNIK</a></span>
-                </div>
-              </div>
-              <div class="post-text">
-                <p>Vulputate eu scelerisque felis imperdiet proin fermentum leo. Neque sodales ut etiam sit amet nisl purus. Est lorem ipsum dolor sit amet.   </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="article">
-            <div class="Headimage">
-              <img src="pictures/second.jpg" class="img-fluid" height="486" width="900">
-            </div>
-            <div class="comment">
-              <div class="head">
-                <h2 class="single-new-head3"><a href="#">VEZA IZMEĐU IBADETA I LIJEPOG PONAŠANJA: KLANJAŠ NAMAZ A RUŽNO SE PONAŠAŠ</a></h2>
-                <div class="after-heading">
-                  <span><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 26. JAUNARA 2018</a></span>
-                  <span><a href="#"><i class="fa fa-user" aria-hidden="true"></i> UREDNIK</a></span>
-                </div>
-              </div>
-              <div class="post-text">
-                <p>Vulputate eu scelerisque felis imperdiet proin fermentum leo. Neque sodales ut etiam sit amet nisl purus. Est lorem ipsum dolor sit amet.   </p>
-              </div>
-            </div>
-          </div>
-        </div>
+          {% endfor %}
       </div> 
       <div class="row col-md-9 related">
         <div>
@@ -411,27 +118,16 @@
         </form>
       </div>  
     </div>
-
+    <!-- end related posts -->
 
     <!-- footer -->
-    <div class="row footer">
-      <div class="col-md-12 first">
-      </div>
-      <div class="col-md-12">
-        <div class="container ro">
-        </div>
-        <div class="col-md-12">
-          <div>
-            <p class="p1">Copyright &copy; CodingBad</p>
-          </div>
-        </div>
-      </div>
-    </div>
+
+      {% include 'parts/footer.twig' %}
+
     <!-- end footer -->
 
   </div>
-
 </body>
 
-<script src="js/script.js"></script>
+<script src="front-end/js/script.js"></script>
 </html>

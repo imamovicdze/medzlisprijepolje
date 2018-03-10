@@ -63,13 +63,20 @@ class DashboardController
         return new JsonResponse($successfull, 201);
     }
 
-    public function createN(Request $request){
-        $news = $this->extractNews($request);
-        $successfull = $this->dashboardService->createNews($news);
+    public function getOneCat(Request $request, $id){
+        $successfull = $this->dashboardService->getCategoryById($id);
         if($successfull == false)  {
             return new JsonResponse('',500);
         };
-        return new JsonResponse($successfull, 201);
+        return new JsonResponse($successfull, 200);
+    }
+
+    public function createN(Request $request){
+        $news = $this->extractNews($request);
+        $successfull = $this->dashboardService->createNews($news);
+        $category = $this->dashboardService->readCategory();
+       // $message = $successfull ? 'Your News has been sucessfully created' : 'Sorry, There is error, try again!';
+        return $this->twig->render("admin/admin.news.twig",['categories' => $category,'message'=> $successfull]);
     }
 
     public function readN(Request $request){
@@ -98,20 +105,52 @@ class DashboardController
         return new JsonResponse($successfull, 201);
     }
 
+    public function getOneN(Request $request,Response $response, $id){
+        $successfull = $this->dashboardService->getNewsById($id);
+        if($successfull == false)  {
+            return new JsonResponse('',500);
+        };
+        return new JsonResponse($successfull, 201);
+    }
+
+    //admin page
+    public function adminCreateNews(Request $request){
+        $category = $this->dashboardService->readCategory();
+        return $this->twig->render("admin/admin.news.twig",['categories' => $category]);
+    }
+    //end admin page
+
+    public function single(Request $request,$id){
+        $news = $this->dashboardService->getNewsById($id);
+        $lastThree = $this->dashboardService->getNewsLastThree();
+        return $this->twig->render("single-new.twig",['news' => $news,'lastThree' => $lastThree]);
+        //create warinng message and redirect to main page if news doesent exist
+    }
+
+    public function index(){
+        $category = $this->dashboardService->readCategory();
+        $news = $this->dashboardService->readNews();
+        $lastFive = $this->dashboardService->getNewsLastFive();
+        //return new JsonResponse($category,201);
+        return $this->twig->render("index.twig", ['categories' => $category,'news' => $news,'lastFive' =>$lastFive]);
+    }
+
+
     // private functions
 
     private function extractCategory(Request $request){
-        $category_name = $request->get("category_name");
+        $category_name = $request->request->get("category_name");
         // TODO: Implement validation for Category
         $category = new CategoryEntityModel($category_name);
         return $category;
     }
 
     private function extractNews(Request $request){
-        $title = $request->get("title");
-        $content = $request->get("content");
-        // TODO: Implement validation for New
-        $news = new NewsEntityModel($title, $content);
+        $title = $request->request->get("title");
+        $content = $request->request->get("content");
+        $category_id = $request->request->get("category_id");
+        // TODO: Implement validation for News
+        $news = new NewsEntityModel($title, $content,$category_id);
         return $news;
     }
 }
