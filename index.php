@@ -13,42 +13,50 @@ use MedzlisPrijepolje\Controllers\DashboardController;
 
 $app = new Application($_SERVER['HOME']);
 
-$mainController = new MainController($app['mainService'],$app['twig']);
-$dashboardController = new DashboardController($app['dashboardService'],$app['twig']);
+$mainController = new MainController($app['NewsService'],$app['CategoryService'],$app['MainService'],$app['twig']);
+$adminController = new \MedzlisPrijepolje\Controllers\AdminController($app['NewsService'],$app['CategoryService'],$app['twig']);
 
-$app->get('/', [$dashboardController, "index"]);
-$app->get('/index', [$dashboardController, "index"]);
+$app->get('/', [$mainController, "index"]);
+$app->get('/index', [$mainController, "index"]);
+$app->post('/mail',[$mainController, "sendMail"]);
 $app->get('/medzlis', [$mainController, "medzlis"]);
 $app->get('/nasidzemati', [$mainController, "nasidzemati"]);
 $app->get('/mekteb', [$mainController, "mekteb"]);
 $app->get('/projekti', [$mainController, "projekti"]);
 $app->get('/contact', [$mainController, "contact"]);
 $app->get('/dashboard', [$mainController, "dashboard"]);
+$app->get('/single-news/{id}',[$mainController, "single"]);
+
+
 
 
 // category CRUD
-$app->post('/category/create',[$dashboardController, "createCat"]);
-$app->get('/categories',[$dashboardController, "readCat"]);
-$app->post('/category/update/{id}',[$dashboardController, "updateCat"]);
-$app->post('/category/delete/{id}', [$dashboardController, "deleteCat"]);
-$app->get('/category/{id}',[$dashboardController, "getOneCat"]);
+$app->post('/category/create',[$adminController, "createCat"]);
+$app->get('/categories',[$adminController, "readCat"]);
+$app->post('/category/update/{id}',[$adminController, "updateCat"]);
+$app->delete('/category/delete/{id}', [$adminController, "deleteCat"]);
+$app->get('/category/{id}',[$adminController, "getOneCat"]);
 
 
 //News CRUD
-$app->post('/news/create', [$dashboardController, "createN"]);
-$app->get('/news',[$dashboardController, "readN"]);
-$app->post('/news/update/{id}',[$dashboardController, "updateN"]);
-$app->post('/news/delete/{id}', [$dashboardController, "deleteN"]);
-$app->get('/news/{id}',[$dashboardController, "getOneN"]);
-
-
-
-$app->get('/single-new/{id}',[$dashboardController, "single"]);
+$app->post('/news/create', [$adminController, "createN"]);
+$app->get('/news',[$adminController, "readN"]);
+$app->post('/news/update/{id}',[$adminController, "updateN"]);
+$app->post('/news/delete/{id}', [$adminController, "deleteN"]);
+$app->get('/news/{id}',[$adminController, "getOneN"]);
 
 
 
 //admin pages
-$app->get('/admin/news/create',[$dashboardController,"adminCreateNews"]);
+$app->get('/admin/dashboard', [$adminController, "dashboard"]);
+
+$app->get('/admin/news/create',[$adminController,"adminCreateNews"]);
+$app->get('/admin/category/create', [$adminController, "adminCreateCategory"]);
+
+$app->get('/admin/news/update/{id}',[$adminController, "adminUpdateNews"]);
+$app->get('/admin/category/update/{id}', [$adminController, "adminUpdateCategory"]);
+
+$app->get('/admin/news/info/{id}', [$adminController, "adminInfoNews"]);
 
 
 

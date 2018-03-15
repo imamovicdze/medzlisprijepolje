@@ -9,3 +9,7 @@
 .headingForm {
     text-align: center;
 }
+
+.news-buttons a {
+    margin-left: 5px;
+}

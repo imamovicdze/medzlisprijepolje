@@ -4,6 +4,8 @@ namespace MedzlisPrijepolje;
 
 use MedzlisPrijepolje\Services\MainService;
 use MedzlisPrijepolje\Services\DashboardService;
+use MedzlisPrijepolje\Services\NewsService;
+use MedzlisPrijepolje\Services\CategoryService;
 use Twig_SimpleFunction;
 
 class Application extends \Cicada\Application
@@ -24,12 +26,15 @@ class Application extends \Cicada\Application
     }
 
 	protected function setUpServices(){
-		$this['mainService'] = function (){
+		$this['MainService'] = function (){
 			return new mainService();
 		};
 
-		$this['dashboardService'] = function (){
-		    return new dashboardService();
+        $this['NewsService'] = function (){
+            return new NewsService();
+        };
+        $this['CategoryService'] = function (){
+            return new CategoryService();
         };
 	}
 /*

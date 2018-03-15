@@ -19,6 +19,12 @@
 
     <!-- slider -->
 
+      {% if isSent is defined %}
+        <div id="isSent" {{ isSent ? 'class="alert alert-success"' : 'class="alert alert-danger"' }} role="alert">
+          <strong>Uporozenje!</strong> {{ isSent ? 'Poruka je uspesno poslata!' : 'Poruka nije poslata!' }}
+        </div>
+      {% endif %}
+
     {% include 'parts/slider.twig' %}
 
     <!-- end slider -->
@@ -30,6 +36,7 @@
     <!-- end whitenavbar -->
 
     <!-- layout-->
+
     <div class="container">
       <div class="row">
         <div class="col header">
@@ -111,8 +118,8 @@
         <div class="col-md-9">
           {% for new in news %}
           <div class="article">
-            <div class="Headimage">
-              <img src="front-end/pictures/second.jpg" class="img-fluid" height="486" width="900">
+            <div>
+              <a href="/single-news/{{ new.id }}"><img src="front-end/pictures/second.jpg" class="img-fluid" height="486" width="900"></a>
             </div>
             <div class="comment">
               <div class="head">
@@ -125,7 +132,7 @@
               </div>
               <div class="post-text">
                 <p>{{ new.content }}</p>
-                <a href="/single-new/{{ new.id }}">PROČITAJ VIŠE</a>
+                <a href="/single-news/{{ new.id }}">PROČITAJ VIŠE</a>
               </div>
             </div>
           </div>
@@ -142,7 +149,10 @@
             <div class="form-group row">
               <label for="search" class=" col-form-label"></label>
               <div class="col-12">
-                <input class="form-control" type="search" placeholder="Search" id="search">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                  <input class="form-control" type="search" placeholder="Search" id="search">
+                  <div class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></div>
+                </div>
               </div>
             </div>
           </aside>
@@ -153,7 +163,7 @@
             <h3 class="heading3">NEDAVNO OBJAVLJENO</h3>
             <ul class="recent-posts">
                 {% for five in lastFive %}
-              <li class="link-sidebar"><a href="/single-new/{{ five.id }}"><img class="sideBarimage" src="front-end/pictures/image1.jpg"><span>{{ five.title }}</span></a></li>
+              <li class="link-sidebar"><a href="/single-news/{{ five.id }}"><img class="sideBarimage" src="front-end/pictures/image1.jpg"><span>{{ five.title }}</span></a></li>
               {% endfor %}
             </ul>
           </aside>

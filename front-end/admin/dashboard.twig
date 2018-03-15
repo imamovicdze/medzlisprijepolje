@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/front-end/css/admin-style.css">
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+
+    <title>Admin Panel</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Medzlis Prijepolje</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/news/create">Kreiraj Vijest</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/category/create">Kreiraj Kategoriju</a>
+        </li>
+    </ul>
+</nav>
+
+{% if messageNews == true %}
+    <div id="f1" {{ messageNews ? 'class="alert alert-success"' : 'class="alert alert-danger"' }} role="alert">
+        <strong>Uporozenje!</strong> {{ messageNews ? 'Vijest je uspesno izbrisana' : 'Vijest nije uspesno izbrisana' }}
+    </div>
+{% endif %}
+
+{% if messageCategory == true %}
+    <div id="f2"  {{ messageCategory ? 'class="alert alert-success"' : 'class="alert alert-danger"' }} role="alert">
+        <strong>Uporozenje!</strong> {{ messageCategory ? 'Kategorija je uspesno izbrisana' : 'Kategorija nije uspesno izbrisana' }}
+    </div>
+{% endif %}
+
+{% if messageUpdate == true %}
+    <div id="f3"  {{ messageUpdate ? 'class="alert alert-success"' : 'class="alert alert-danger"' }} role="alert">
+        <strong>Uporozenje!</strong> {{ messageUpdate ? 'Vijest je uspjesno izmenjena' : 'Vijest nije uspesno izmenjena' }}
+    </div>
+{% endif %}
+
+{% if messageUpdateC == true %}
+    <div id="f4"  {{ messageUpdateC ? 'class="alert alert-success"' : 'class="alert alert-danger"' }} role="alert">
+        <strong>Uporozenje!</strong> {{ messageUpdateC ? 'Kategorija je uspjesno izmenjena' : 'Vijest nije uspesno izmenjena' }}
+    </div>
+{% endif %}
+
+<div class="container">
+    <h2>Kategorije</h2>
+    <p>Ovde se nalaze sve kategorije</p>
+    <table class="table table-dark table-striped">
+        <thead>
+        <tr>
+            <th>Naziv Kategorije</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td>{{ category.category_name }}</td>
+                <td class="news-buttons">
+                    <a href="/category/delete/{{ category.id }}" class="btn btn-outline-danger float-right" role="button">Delete</a>
+                    <a href="/admin/category/update/{{ category.id }}" class="btn btn-outline-primary float-right" role="button">Edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Vijesti</h2>
+    <p>Ovde se nalaze sve vijesti</p>
+    <table class="table table-dark table-striped">
+        {% for new in news %}
+        <thead>
+            <tr>
+                <th class="news-buttons">
+                   <span><i>NASLOV: </i></span> {{ new.title }}
+                    <a href="/news/delete/{{ new.id }}" class="btn btn-outline-danger float-right" role="button">Delete</a>
+                    <a href="/admin/news/update/{{ new.id }}" class="btn btn-outline-primary float-right" role="button">Edit</a>
+                    <a href="/admin/news/info/{{ new.id }}" class="btn btn-outline-success float-right" role="button">Info</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ new.content }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="/front-end/js/script.js"></script>
+{#<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>#}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

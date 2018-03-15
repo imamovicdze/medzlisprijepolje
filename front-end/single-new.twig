@@ -52,9 +52,52 @@
             </div>
           </div>
         </div>
+
+        <!-- sidebar-->
+        <div class="col-md-3 sidebar">
+
+          <!-- search-->
+          <aside>
+            <h3 class="heading3">PRETRAŽI</h3>
+            <div class="form-group row">
+              <label for="search" class=" col-form-label"></label>
+              <div class="col-12">
+                <input class="form-control" type="search" placeholder="Search" id="search">
+              </div>
+            </div>
+          </aside>
+          <!-- end search-->
+
+          <!-- recent posts-->
+          <aside>
+            <h3 class="heading3">NEDAVNO OBJAVLJENO</h3>
+            <ul class="recent-posts">
+                {% for five in lastFive %}
+                  <li class="link-sidebar"><a href="/single-news/{{ five.id }}"><img class="sideBarimage" src="front-end/pictures/image1.jpg"><span>{{ five.title }}</span></a></li>
+                {% endfor %}
+            </ul>
+          </aside>
+          <!-- end recent posts-->
+
+          <!-- category -->
+          <aside>
+            <h3 class="heading3">KATEGORIJE</h3>
+              {% for category in categories %}
+                <ul class="categoryList">
+                  <li><a href="#">{{ category.category_name }}</a></li>
+                </ul>
+              {% endfor %}
+          </aside>
+          <!-- end category -->
+
+        </div>
+        <!-- end sidebar-->
+
       </div>
     </div>
     <!-- end article -->
+
+
 
     <!-- related posts -->
     <div class="container">
@@ -69,8 +112,8 @@
           {% for three in lastThree %}
         <div class="col-md-4">
           <div class="article">
-            <div class="Headimage">
-              <img src="front-end/pictures/second.jpg" class="img-fluid" height="486" width="900">
+            <div>
+              <a href="/single-news/{{ three.id }}"><img src="front-end/pictures/second.jpg" class="img-fluid" height="486" width="900"></a>
             </div>
             <div class="comment">
               <div class="head">
